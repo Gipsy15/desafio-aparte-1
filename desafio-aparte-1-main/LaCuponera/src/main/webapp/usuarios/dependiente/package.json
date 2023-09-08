@@ -1,0 +1,16 @@
+{
+  "type": "module",
+  "name": "dependiente",
+  "version": "1.0.0",
+  "description": "",
+  "main": "script.js",
+  "scripts": {
+    "build": "rollup --config --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "^3.29.0"
+  }
+}

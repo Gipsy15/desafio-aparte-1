@@ -1,0 +1,222 @@
+/* 
+Estos son los estilos de la pagina donde aparecen el formulario para canjear los cupones 
+la etiqueta main contiene a todos los elementos de la pagina
+main es padre del header y la etiqueta section que contiene el form 
+ademas es padre del contenedor que contiene los modales que indican
+los tipos de respuestas que se reciben cada vez que se canjea un cupon 
+si todo salió bien o no
+*/
+
+/* estos son estilos generales para todos los elementos y los estilos de clases*/
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Nunito+Sans:opsz,wght@6..12,200&display=swap');
+
+:root{
+    --color-header: #404cbd;
+    --color-main: #e4f0f0;
+    --color-form: #eef3f3;
+    --bg-btn: #000;
+}
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow-x: hidden;
+}
+.btn-bg{
+    background-color: var(--bg-btn);
+    color: #fff;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+}
+.abrir-modal-canje{
+    text-decoration: none;
+    color: #fff;position: absolute;
+    right: 5%;
+}
+/* aca van los estilos de main padre de header y de la etiqueta section con id main__div-container-flex
+aca comienzan los estilos de los elementos que se van a mostrar al ingresar a la pagina
+*/
+#main{
+    display: flex;
+    width: 100%;
+    height: 120vh;
+    flex-direction: column;
+    background-color: #e4f0f0;
+    overflow-x: hidden;
+}
+#header{
+    width: 100%;
+    height: 10%;
+    background-color: #404cbd;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+/* esta etiqueta es el padre de form*/
+#main__div-container-flex{
+    width: 95%;
+    height: 60%;
+    margin: 2em auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* estilos del formulario */
+#form-canje{
+    width: 27%;
+    height: 100%;
+    background-color: #eef3f3;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    row-gap: 2em;
+    box-shadow: 4px 8px 10px #abb7b8;
+}
+#form-canje h2 {
+    margin: .8em 0;
+}
+.label-inp-canje{
+    width: 80%;
+    height: 20%;
+}
+.alerta-error-input{
+    color: #b92910;
+    margin-left: 1.2em;
+}
+.input-canje{
+    width: 100%;
+    height: 1.2em;
+    padding: .6em;
+    margin: .8em 0;
+    font-size: .9em;
+    border-radius: .5em;
+    border: 2.5px solid #d9d9d9;
+}
+#btn-canjear{
+    padding: .5em 2.5em;
+    font-size: 1em;
+}
+/*
+estilos de los elementos que estan ocultos
+estos primeros son los estilos del modal donde 
+se muestra el historial de canjes
+*/
+/* este contenedor contiene al modal de canjes*/
+#main-container-modal-canjes-activo{
+    width: 100vw;
+    height: 100vh;
+    background-color: #111111bd;
+    position: fixed;
+    display: block;
+}
+/* esta clase será reemplazada por la activa cuando se de click en los botones de cerrar modal de cupones canjeados*/
+#main-container-modal-canjes-inactivo{
+    display:  none;
+}
+/* container de canjes*/
+#container-canjes{
+    width: 50%;
+    height: 60%;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    margin: 5em auto;
+    border-radius: 10px;
+    padding: .4em 0 0 0;
+}
+/* container que contiene el titulo de canje de cupones y el boton de cerrar modal*/
+#container-title-modal{
+    margin: 0 auto;
+    height: 10%;
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+}
+/* lista de los cupones que se han canjeado*/
+#lista-canjes{
+    margin: 0 auto;
+    height: 80%;
+    width: 97%;
+    position: relative;
+    overflow-y: scroll;
+}
+/*texto que se muestra cuando la lista de canje esta vacia */
+#aviso-registro-canje-vacio{
+    position: absolute;
+    margin: 5em 42%;
+    white-space: nowrap;
+}
+/*estilos de la etiqueta span con clase canje que contiene la informacion de los canjes que se realicen*/
+.canje{
+    width: 100%;
+    padding: 1em 0;
+    height: auto;
+    background-color: #f6f5f4;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    border-bottom: .5px solid #000;
+}
+/* icono del cupon*/
+.icon-cupon{
+    position: absolute;
+    font-size: 1.1em;
+}
+.b-id-cupon{
+    margin: 0 0 0 1.8em;
+}
+/* footer del modal de la lista de canjes*/
+#footer-modal-canjes{
+    width: 100%;
+    height: 10%;
+    background-color: #dddad6;
+    border-radius: 0 0 10px 10px ;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* boton para guardar un pdf de los canjes registrados*/
+#btn-guardar-pdf-canje{
+    padding: .5em .9em;
+    margin: 0 .5em 0 0;
+}
+
+#container-alert{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    width: 20%;
+    height: 5em;
+    background-color: #0ad346;
+    right: -18em;
+    bottom: 2.5em;
+    position: absolute;
+    color: #fff;
+}
+.bi-check-circle-fill,
+.bi-exclamation-triangle-fill,
+.bi-exclamation-triangle{
+    color: #ffffff;
+    font-size: 2em;
+}
+
+#main__footer{
+    height: 22%;
+    width: 100%;
+    text-align: center;
+    background-color: #005383;
+    color: #fff;
+    font-family: 'IBM Plex Sans', sans-serif;
+font-family: 'Nunito Sans';
+}
+#main__footer h2 {
+    margin: 1.5em 0;
+}
